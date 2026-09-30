@@ -1,23 +1,21 @@
 {
   "name": "dango-battle-server",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
-  "description": "DANGO BATTLE - Express + Socket.IO server (STEP 2: server bootstrap)",
+  "description": "DANGO BATTLE - Express + Socket.IO server (private rooms, random match, reconnect, rematch)",
   "main": "server/server.js",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "start": "node server/server.js",
-    "app:prepare": "node scripts/prepare-app.js",
-    "app:android:init": "npm run app:prepare && npx cap add android",
-    "app:sync": "npm run app:prepare && npx cap sync android",
-    "app:open": "npx cap open android"
+    "test": "node test/smoke.js"
   },
   "dependencies": {
     "express": "^5.2.1",
-    "socket.io": "^4.8.3",
-    "@capacitor/core": "^8.0.0",
-    "@capacitor/android": "^8.0.0"
+    "socket.io": "^4.8.3"
   },
   "devDependencies": {
-    "@capacitor/cli": "^8.0.0"
+    "socket.io-client": "^4.8.3"
   }
 }
